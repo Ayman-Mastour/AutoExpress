@@ -1,0 +1,32 @@
+<main>
+  <section>
+    <h1>Modifier une Voiture</h1>
+    <!-- formulaire pour modifier une voiture -->
+    <form action="/editCar/<%= post.id %>" method="post">
+      <label for="brand">Marque de la voiture</label>
+      <!-- escape empechera au user malveillant d'injecter du code dans la page -->
+      <input type="text" name="brand" id="brand" value="<%= escape(post.Brand) %>">
+
+      <label for="model">Modèle de la voiture</label>
+      <input type="text" name="model" id="model" value="<%= post.Model %>">
+
+      <label for="year">Année de la voiture</label>
+      <input type="text" name="year" id="year" value="<%= post.Year %>">
+
+      <label for="dailyRate">Tarif quotidien de la voiture</label>
+      <input type="number" name="dailyRate" step="0.01" id="dailyRate" value="<%= post.DailyRate %>">
+
+      <select name="agency_id">
+        <% for (let i = 0; i < agencies.length; i++) { %>
+        <option value="<%= agencies[i].id %>" <% if (agencies[i].id === post.agency_id) { %> selected <% } %>>
+          <!-- else -->
+          <%= agencies[i].name %>
+        </option>
+        <% } %>
+      </select>
+
+      <input type="submit" value="Enregistrer">
+      
+    </form>
+  </section>
+</main>

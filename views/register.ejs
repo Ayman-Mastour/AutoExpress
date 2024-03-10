@@ -1,0 +1,34 @@
+<%- include ('header') -%>
+<main>
+    <section>
+
+        <div class="container-log">
+
+            <h1>S'inscrire</h1>
+
+            <% if(locals.message) { %>
+            <strong>
+                <%= message %>
+            </strong>
+            <% } %>
+            <!-- formulaire pour inscription admin -->
+            <form method="post" action="/register" class="form-log">
+                <label for="name">Nom</label>
+                <input type="text" name="name" id="name">
+
+                <label for="firstname">Prénom</label>
+                <input type="text" name="firstname" id="firstname">
+
+                <label for="email">Adresse email</label>
+                <input type="email" name="email" id="email">
+
+                <label for="pwd">Mot de passe</label>
+                <input type="password" name="pwd" id="pwd">
+
+                <button type="submit">Créer un compte</button>
+            </form>
+
+        </div>
+
+    </section>
+</main>

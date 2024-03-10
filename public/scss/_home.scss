@@ -1,0 +1,278 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_placeholders.scss';
+
+* {
+    min-width: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@keyframes fade {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+
+body {
+    font-family: $police-principal;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    animation: fade 0.60s forwards;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+a {
+    @extend %lien;
+}
+
+.containerHome {
+    @extend %flex-center;
+}
+
+.containerheaderform {
+    @extend %flex-center;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 95%;
+    border-radius: 4px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $hover-background-color;
+}
+
+.containerheaderform input {
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    @include padding;
+    margin: 10px;
+    @extend %flex-center;
+    width: 90%;
+}
+
+.containerheaderform button {
+    @extend %bouton;
+    font-size: 18px;
+    margin: 10px;
+
+}
+
+.form-head-button button {
+    font-size: 13px;
+}
+
+#container-img-head img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.overlay {
+    background-color: $main-color;
+    color: $white;
+    @include padding;
+    text-align: center;
+    z-index: 1;
+}
+
+.overlay h3 {
+    font-size: 30px;
+}
+
+.containerimglouer img {
+    width: 95%;
+}
+
+.container-bloc-text {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex: 1;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+}
+
+.bloc1, .bloc2{
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+#img-hight-footer img{
+    width: 100%;
+    border-radius: 50% 50% 50% 50% / 0% 100% 0% 100%  ;
+}
+
+.ytb{
+    @extend %flex-center;
+    width: 90%;
+    margin: 1em auto;
+}
+
+footer{
+   display: flex;
+   border-top: 2px solid black;
+   margin-top: 10px;
+}
+
+footer{
+    background-color: $main-color;
+}
+
+.F2{
+    padding: 20px;
+    margin: 5px;
+    font-weight: 0;
+    color: $white;
+}
+
+#container-img-head img, .hidden-desktop{
+    display: none;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+    .containerheaderform {
+        width: 70%;
+    }
+
+    .containerimglouer img {
+        width: 70%;
+    }
+
+    .container-bloc-text {
+        width: 80%;
+    }
+
+    .overlay{
+        padding: 25px;
+    }
+
+    .overlay h3{
+        font-size: 35px;
+    }
+
+    .container-bloc-text{
+        margin: 1em auto;
+        
+    }
+    .bloc1, .bloc2{
+        border-radius: 5px;
+        box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+        margin-bottom: 10px;
+    }
+
+    #container-img-head img{
+        height: 45em;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #img-hight-footer img{
+        width: 90%;
+        margin-left:auto ; 
+        margin-right: auto;
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .containerheaderform {
+        width: 70%;
+        top: 45%;
+    }
+
+    .containerimglouer img {
+        width: 70%;
+    }
+
+    .container-bloc-text {
+        width: 80%;
+    }
+
+    .overlay{
+        padding: 25px;
+    }
+
+    .overlay h3{
+        font-size: 35px;
+    }
+
+    .container-bloc-text{
+        margin: 1em auto;
+        
+    }
+    .bloc1, .bloc2{
+        border-radius: 5px;
+        box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+        margin-bottom: 10px;
+        padding: 20px;
+    }
+
+    #container-img-head img{
+        height: 50em;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #img-hight-footer img{
+        width: 90%;
+        margin-left:auto ; 
+        margin-right: auto;
+        display: block; 
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    #img-hight-footer img{
+        width: 70%;
+        margin-left:auto ; 
+        margin-right: auto;
+        display: block;
+    }
+    
+    .container-bloc-text{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    #container-img-head img{
+        height: 23em;
+    }
+
+    #container-img-head img, .hidden-mobile{
+        display: none;
+    }
+   
+    .containerheaderform{
+        width: 30%;
+        height: 25%;
+    }
+
+}

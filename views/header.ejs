@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>AutoExpress</title>
+    <link rel="icon" type="image/png" href="/img/logoicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- sass -->
+    <link rel="stylesheet" href="scss/main.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- integration map et geolocalisation api -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
+
+    <!-- integration des icones fontawesome -->
+    <script src="https://kit.fontawesome.com/91013eb16c.js" crossorigin="anonymous"></script>
+</head>
+
+</html>
+
+<body>
+    <header>
+
+        <!-- header mobile -->
+
+        <nav class='nav'>
+            <label class="menu-btn" for="menu-toggle">
+                <span></span>
+            </label>
+
+            <input id="menu-toggle" type="checkbox" />
+
+            <ul class="menu-box">
+                <li>
+                    <a class="menu-item" href="/">Acceuil</a>
+                </li>
+
+                <!-- condition d'affichage dans le header des log -->
+
+                <% if (locals.isAdmin) { %>
+                <li>
+                    <a class="menu-item" href="/admin"> Administration</a>
+                </li>
+                <li>
+                    <a class="menu-item" href="/logout"> Se déconnecter</a>
+                </li>
+                <% } %>
+
+                <li>
+                    <a class="menu-item" href='/Maps'>Trouver une agence</a>
+                </li>
+                <li>
+                    <% if (locals.isLoggedIn) { %>
+                <li>
+                    <a class="menu-item" href="/logout">Se déconnecter</a>
+                </li>
+                <% } else { %>
+                <li>
+                    <a class="menu-item" href="/loginUsers">Se connecter</a>
+                </li>
+                <% } %>
+                </li>
+            </ul>
+
+            <!-- Header laptop -->
+
+            <div class="header-basic">
+                <ul class="head-list2">
+                    <li>
+                        <a href="/">Acceuil</a>
+                    </li>
+                    <% if (locals.isAdmin) { %>
+                    <li>
+                        <a href="/admin"> Administration</a>
+                    </li>
+                    <li>
+                        <a href="/logout"> Se déconnecter</a>
+                    </li>
+                    <% } %>
+                    <li>
+                        <a href='/Maps'>Trouver une agence</a>
+                    </li>
+                    <li>
+                        <!-- condition d'affichage dans le header des log -->
+                        <% if (locals.isLoggedIn) { %>
+                    <li>
+                        <a href="/logout">Se déconnecter</a>
+                    </li>
+                    <% } else { %>
+                    <li>
+                        <a href="/loginUsers">Se connecter</a>
+                    </li>
+                    <% } %>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+</header>
+<script>
+    function HeaderStyle() {
+
+        // récuperation des classes
+        const menuBtn = document.querySelector('.menu-btn');
+        const menuBox = document.querySelector('.menu-box');
+        const headerBasic = document.querySelector('.header-basic');
+
+        // si la taille de l'ecran est superieur ou égale a 1025px ...
+        if (window.innerWidth >= 1025) {
+            menuBtn.style.display = 'none';
+            menuBox.style.display = 'none';
+            headerBasic.style.display = 'block';
+        } else {
+            menuBtn.style.display = 'block';
+            menuBox.style.display = 'block';
+            headerBasic.style.display = 'none';
+        }
+    }
+
+    // execute la fonction au chargement de la page 
+    window.onload = HeaderStyle;
+    //et chaque fois que la fenêtre est redimensionné
+    window.addEventListener('resize', HeaderStyle);
+</script>

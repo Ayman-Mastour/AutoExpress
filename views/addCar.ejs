@@ -1,0 +1,48 @@
+<%- include('header') -%>
+<h1>Ajouter un Véhicules</h1>
+
+<!-- formulaire pour add une voiture -->
+
+<form method="post" action="/addCar" enctype="multipart/form-data" class="form-add">
+    
+    <fieldset>
+        <legend> Ajouter un Véhicules</legend>
+
+        <label for="Year">Années :</label>
+        <input type="text" id="Year" name="Year"><br>
+
+        <label for="Brand">Marque :</label>
+        <input type="text" id="Brand" name="Brand"><br>
+
+        <label for="Model">Modèle :</label>
+        <input type="text" id="Model" name="Model"><br>
+
+        <label for="DailyRate">Tarif journalier :</label>
+        <input type="number" id="DailyRate" name="DailyRate" step="any"><br>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Ajouter une photos</legend>
+
+        <label for="Photos">Image de l'annonce :</label>
+        <input type="file" name="Photos" id="Photos">
+
+        <!-- select pour selection l'agence lié -->
+
+        <select name="agency">
+
+            <option value="" selected disabled>
+                Sélectionner une agence
+            </option>
+            <% for(let i = 0; i < agencies.length; i++) { %>
+                <option value="<%= agencies[i].id %>">
+                    <%= agencies[i].name %>
+                </option>
+            <% } %>
+
+        </select>
+        
+    </fieldset>
+    <input type="submit" value="Ajouter">
+</form>

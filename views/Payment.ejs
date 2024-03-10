@@ -1,0 +1,36 @@
+<%- include('header') -%>
+<main>
+  <aside>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <div id="checkout"></div>
+    <!-- initialisation de l'api stripe -->
+    <script>
+      // clé publique
+      const stripe = Stripe(
+        'pk_live_51OHniwJtLa27fW5yX5zv4bvQ9zU44WP9fYbESV1yy4UHwWqu0zV2gGK52xWmlq8i0JCusdhph9VfDBch95UjA5SM00pd8qFSpT');
+
+      initialize();
+
+      async function initialize() {
+        const response = await fetch("/create-checkout-session", {
+          method: "POST",
+        });
+
+        const {
+          clientSecret
+        } = await response.json();
+
+        const checkout = await stripe.initEmbeddedCheckout({
+          clientSecret,
+        });
+
+        checkout.mount('#checkout');
+      }
+
+      const carID = localStorage.getItem('selectedCarID');
+    </script>
+
+  </aside>
+</main>

@@ -1,0 +1,89 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_placeholders.scss';
+
+
+.tableCarContainer {
+    border: 2px solid black;
+    width: 100%;
+    font-size: 12px;
+
+    img {
+        width: 10em;
+        border: 2px solid black;
+    }
+}
+
+.tableContainerAgency {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+.delete, .edit {
+    background-color: black;
+    color: white;
+    padding: 1px;
+
+    &.delete {
+        color: rgb(255, 108, 108);
+    }
+}
+
+.addC, .addA{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+
+    .tableCarContainer img{
+        width: 10em;
+    }
+
+    .tableCarContainer{
+        font-size: 15px;
+    }
+
+    .tableContainerAgency {
+        font-size: 15px;
+        
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+
+    .tableCarContainer img{
+        width: 10em;
+    }
+
+    .tableCarContainer{
+        font-size: 18px;
+    }
+
+    .tableContainerAgency {
+        font-size: 18px;
+    }
+
+}
+
+@media screen and (min-width: 1025px){
+
+    .tableCarContainer img{
+        width: 10em;
+    }
+
+    .tableCarContainer{
+        font-size: 19px;
+        width: 80%;
+    }
+
+    .tableContainerAgency {
+        font-size: 19px;
+    }
+
+
+}

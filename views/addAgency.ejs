@@ -1,0 +1,20 @@
+<%- include('header') -%>
+
+<h1>Ajouter une agence</h1>
+<!-- formulaire pour add une agence -->
+
+<form action="/addAgency" method="post" class="form-add">
+
+    <fieldset>
+        <label for="name">Nom de l'agence:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude">
+
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude">
+    </fieldset>
+    <button type="submit">Ajouter l'agence</button>
+
+</form>

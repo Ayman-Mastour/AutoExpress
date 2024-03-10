@@ -1,0 +1,671 @@
+.popContainer h2, .container-log, .ytb, .containerheaderform input, .containerheaderform, .containerHome, .head-Map h1, #car-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+.containerheaderform button, .head-Map button, #car-details button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+#map {
+  height: 40em;
+  width: 95%;
+  margin: 1em auto;
+  z-index: 1;
+}
+
+#car-details {
+  margin: 1em auto;
+  border-radius: 4px;
+  box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+}
+
+#carsTable {
+  width: 90%;
+}
+
+.head-Map h1 {
+  margin: 1em auto;
+  font-weight: 600;
+  font-size: 25px;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+@media screen and (min-width: 1025px) {
+  #map {
+    width: 60%;
+    height: 35em;
+  }
+  #car-details {
+    width: 70%;
+  }
+}
+.popContainer h2, .container-log, .ytb, .containerheaderform input, .containerheaderform, .containerHome, #car-details, .head-Map h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+.containerheaderform button, #car-details button, .head-Map button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.tableCarContainer {
+  border: 2px solid black;
+  width: 100%;
+  font-size: 12px;
+}
+.tableCarContainer img {
+  width: 10em;
+  border: 2px solid black;
+}
+
+.tableContainerAgency {
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 10px;
+  border: 2px solid black;
+}
+
+.delete, .edit {
+  background-color: black;
+  color: white;
+  padding: 1px;
+}
+.delete.delete, .edit.delete {
+  color: rgb(255, 108, 108);
+}
+
+.addC, .addA {
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .tableCarContainer img {
+    width: 10em;
+  }
+  .tableCarContainer {
+    font-size: 15px;
+  }
+  .tableContainerAgency {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .tableCarContainer img {
+    width: 10em;
+  }
+  .tableCarContainer {
+    font-size: 18px;
+  }
+  .tableContainerAgency {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .tableCarContainer img {
+    width: 10em;
+  }
+  .tableCarContainer {
+    font-size: 19px;
+    width: 80%;
+  }
+  .tableContainerAgency {
+    font-size: 19px;
+  }
+}
+.popContainer h2, .container-log, .ytb, .containerheaderform input, .containerheaderform, .containerHome, #car-details, .head-Map h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+.containerheaderform button, #car-details button, .head-Map button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+* {
+  min-width: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  animation: fade 0.6s forwards;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+.containerheaderform {
+  flex-direction: column;
+  border-radius: 10px;
+  width: 95%;
+  border-radius: 4px;
+  box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255);
+}
+
+.containerheaderform input {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  width: 90%;
+}
+
+.containerheaderform button {
+  font-size: 18px;
+  margin: 10px;
+}
+
+.form-head-button button {
+  font-size: 13px;
+}
+
+#container-img-head img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
+.overlay h3 {
+  font-size: 30px;
+}
+
+.containerimglouer img {
+  width: 95%;
+}
+
+.container-bloc-text {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 10px;
+}
+
+.bloc1, .bloc2 {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+#img-hight-footer img {
+  width: 100%;
+  border-radius: 50% 50% 50% 50%/0% 100% 0% 100%;
+}
+
+.ytb {
+  width: 90%;
+  margin: 1em auto;
+}
+
+footer {
+  display: flex;
+  border-top: 2px solid black;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #000000;
+}
+
+.F2 {
+  padding: 20px;
+  margin: 5px;
+  font-weight: 0;
+  color: rgb(255, 255, 255);
+}
+
+#container-img-head img, .hidden-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .containerheaderform {
+    width: 70%;
+  }
+  .containerimglouer img {
+    width: 70%;
+  }
+  .container-bloc-text {
+    width: 80%;
+  }
+  .overlay {
+    padding: 25px;
+  }
+  .overlay h3 {
+    font-size: 35px;
+  }
+  .container-bloc-text {
+    margin: 1em auto;
+  }
+  .bloc1, .bloc2 {
+    border-radius: 5px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    margin-bottom: 10px;
+  }
+  #container-img-head img {
+    height: 45em;
+    object-fit: cover;
+    object-position: center;
+  }
+  #img-hight-footer img {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .containerheaderform {
+    width: 70%;
+    top: 45%;
+  }
+  .containerimglouer img {
+    width: 70%;
+  }
+  .container-bloc-text {
+    width: 80%;
+  }
+  .overlay {
+    padding: 25px;
+  }
+  .overlay h3 {
+    font-size: 35px;
+  }
+  .container-bloc-text {
+    margin: 1em auto;
+  }
+  .bloc1, .bloc2 {
+    border-radius: 5px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    margin-bottom: 10px;
+    padding: 20px;
+  }
+  #container-img-head img {
+    height: 50em;
+    object-fit: cover;
+    object-position: center;
+  }
+  #img-hight-footer img {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #img-hight-footer img {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .container-bloc-text {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #container-img-head img {
+    height: 23em;
+  }
+  #container-img-head img, .hidden-mobile {
+    display: none;
+  }
+  .containerheaderform {
+    width: 30%;
+    height: 25%;
+  }
+}
+.popContainer h2, .container-log, #car-details, .head-Map h1, .containerHome, .containerheaderform, .containerheaderform input, .ytb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+#car-details button, .head-Map button, .containerheaderform button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.popContainer h2, .container-log, #car-details, .head-Map h1, .containerHome, .containerheaderform, .containerheaderform input, .ytb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+#car-details button, .head-Map button, .containerheaderform button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.nav {
+  background-color: black;
+  padding: 10px;
+}
+.nav #menu-toggle {
+  opacity: 0;
+}
+.nav #menu-toggle:checked + .menu-btn > span {
+  transform: rotate(45deg);
+}
+.nav #menu-toggle:checked + .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+.nav #menu-toggle:checked + .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+.nav #menu-toggle:checked ~ .menu-box {
+  left: 0 !important;
+}
+.nav .menu-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 25px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 4;
+}
+.nav .menu-btn > span,
+.nav .menu-btn > span::before,
+.nav .menu-btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transition-duration: 0.25s;
+}
+.nav .menu-btn > span::before {
+  content: "";
+  top: -8px;
+}
+.nav .menu-btn > span::after {
+  content: "";
+  top: 8px;
+}
+.nav .menu-box {
+  z-index: 3;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: black;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
+}
+.nav .menu-item {
+  display: block;
+  padding: 12px 24px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 100;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.nav .menu-item:hover {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  border-radius: 5px;
+}
+
+.nav a {
+  margin: 10px;
+  padding: 10px;
+}
+
+.header-basic {
+  display: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .menu-btn,
+  #menu-toggle,
+  .menu-box {
+    display: none;
+  }
+  .header-basic {
+    display: block;
+  }
+  .head-list2 {
+    list-style: none;
+    display: flex;
+    margin: 1em auto;
+  }
+  .head-list2 li a {
+    color: rgb(255, 255, 255);
+    text-align: center;
+  }
+}
+.popContainer h2, .container-log, #car-details, .head-Map h1, .containerHome, .containerheaderform, .containerheaderform input, .ytb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+#car-details button, .head-Map button, .containerheaderform button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.container-log {
+  flex-direction: column;
+  margin: 5em auto;
+  border-radius: 4px;
+  box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+  width: 20rem;
+  padding: 50px;
+}
+
+.text-log a {
+  text-decoration: underline;
+}
+
+.form-log input {
+  line-height: 28px;
+  padding: 8px 16px;
+  width: 100%;
+  border: unset;
+  border-radius: 4px;
+  outline-color: #000000;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(60, 66, 87, 0.16) 0px 0px 0px 1px;
+}
+
+.form-log button {
+  line-height: 28px;
+  padding: 8px 16px;
+  width: 100%;
+  border: unset;
+  border-radius: 4px;
+  box-shadow: rgba(60, 66, 87, 0.16) 0px 0px 0px 1px;
+  background-color: #000000;
+  box-shadow: #000000;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.popContainer h2, #car-details, .head-Map h1, .containerHome, .containerheaderform, .containerheaderform input, .ytb, .container-log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+#car-details button, .head-Map button, .containerheaderform button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.form-add input {
+  border-radius: 5px;
+  margin: 5px;
+  background-color: white;
+}
+
+.popContainer h2, #car-details, .head-Map h1, .containerHome, .containerheaderform, .containerheaderform input, .ytb, .container-log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+#car-details button, .head-Map button, .containerheaderform button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.popContainer h2 {
+  font-size: 800;
+  margin-left: 70px;
+}
+
+.popContainer button {
+  background-color: black;
+  font-size: 20px;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  color: white;
+}
+
+.popContainer a {
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */

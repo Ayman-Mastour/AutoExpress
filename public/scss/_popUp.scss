@@ -1,0 +1,24 @@
+@import '_mixins.scss';
+@import '_placeholders.scss';
+@import '_variables.scss';
+
+.popContainer h2{
+    @extend %flex-center;
+    font-size: 800;
+    margin-left: 70px;
+}
+
+.popContainer button{
+    background-color: black;
+    font-size: 20px;
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include padding;
+    color: white;
+}
+
+.popContainer a{
+    color: white;
+}

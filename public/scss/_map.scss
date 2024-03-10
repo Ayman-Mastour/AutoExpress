@@ -1,0 +1,50 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_placeholders.scss';
+
+
+#map {
+    height: 40em;
+    width: 95%;
+    margin: 1em auto;
+    z-index: 1;
+}
+
+#car-details {
+    @extend %flex-center;
+    margin: 1em auto;
+    border-radius: 4px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px,
+        rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+}
+
+#car-details button{
+    @extend %bouton
+}
+
+#carsTable {
+    width: 90%;
+}
+
+.head-Map button {
+    @extend %bouton;
+}
+
+.head-Map h1 {
+    @extend %flex-center;
+    margin: 1em auto;
+    font-weight: 600;
+    font-size: 25px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+@media screen and (min-width: 1025px) {
+    #map{
+        width: 60%;
+        height: 35em;
+    }
+
+    #car-details{
+        width: 70%;
+    }
+}

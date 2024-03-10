@@ -1,0 +1,34 @@
+<%- include('header') -%>
+<main>
+    <section>
+        <div class="container-log">
+
+            <span class="text-log">
+                <h1>Connectez-vous</h1>
+            </span>
+            <!-- gestion error -->
+            <% if(locals.message) { %>
+
+            <strong>
+                <%= message %>
+            </strong>
+
+            <% } %>
+            <!-- formulaire pour connexion -->
+            <form method="post" action="loginUsers" class="form-log">
+                <label for="email">Adresse email</label>
+                <input type="email" name="email" id="email" value="user@gmail.com">
+
+                <label for="pwd">Mot de passe</label>
+                <input type="password" name="pwd" id="pwd" value="user">
+
+                <button type="submit">Se connecter</button>
+            </form>
+
+            <span class="text-log">
+                <p>Vous n'avez pas encore de compte ? <a href="/usersRegister">Créer un compte</a></p>
+            </span>
+            
+        </div>
+    </section>
+</main>

@@ -1,0 +1,42 @@
+<%- include('header') -%>
+<!-- INCOMPLET -->
+<main>
+    <a href="/">Retour</a>
+    
+    <section>
+        <h1>
+            <%= com.Brand %> - <%= com.Model %>
+        </h1>
+    </section>
+
+    <section>
+        <hr>
+        <ul>
+            <% for (let i = 0; i < comments.length; i++) { %>
+            <li>
+                <h3>
+                    <%= comments[i].pseudo %>
+                </h3>
+                <p>
+                    <%= comments[i].Comment %>
+                </p>
+                <p>
+                    <%= new Date(comments[i].Date).toLocaleDateString() %>
+                </p>
+            </li>
+            <% } %>
+        </ul>
+        <hr>
+    </section>
+
+    <form action="/addComment/<%= com.id %>" method="post">
+        <label >Pseudo</label>
+
+        <input type="text" name="pseudo">
+        <label>Commentaire</label>
+
+        <textarea name="content"></textarea>
+        <input type="submit" name="Enregistrer">
+    </form>
+</main>
+<!-- INCOMPLET -->

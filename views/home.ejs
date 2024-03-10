@@ -1,0 +1,78 @@
+<%- include ('header') -%>
+<main>
+    <aside class="containerHome">
+        <section class="containerheaderform">
+            <div class="form-head-button">
+                <button><i class="fa-solid fa-car" style="color: #ffffff;"></i> Véhicules</button>
+                <button><i class="fa-solid fa-warehouse" style="color: #ffffff;"></i> Agences</button>
+            </div>
+            <form class="app-form">
+                <input type="text" placeholder="Agence, ville ou adresse">
+                <button type="submit" id="btnsearch">Sélectionnez un lieu</button>
+            </form>
+        </section>
+    </aside>
+    <div id="container-img-head">
+        <img class="img-mobile hidden-mobile" src="img/vehicule face somnbre.jpg"
+            alt="Véhicule vue de face dans un garage sombre" loading="lazy">
+        <img class="img-desktop hidden-desktop" src="img/garage voiture.jpg"
+            alt="garage sombre avec plusieurs véhicules garer" loading="lazy">
+    </div>
+    <article>
+        <section class="containerimglouer">
+            <div class="overlay">
+                <h3>LOUEZ PREMIUM PAYEZ À PETIT PRIX.</h3>
+                <p>Location de voitures à des tarifs abordables.</p>
+            </div>
+        </section>
+    </article>
+
+    <article class="container-bloc-text">
+
+        <section class="bloc1">
+            <h3>La location comme vous l’aimerez</h3>
+            <p>Sans contact, sans attente. Avec annulation gratuite, support client et accès aux véhicules 24/7,
+                prolongation facile et plus encore. À la demande.</p>
+        </section>
+        <section class="ytb">
+            <iframe width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/udWygM84YvU?si=BE6qAzbS6_NPqNKb"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen loading="lazy"></iframe>
+        </section>
+        <section class="bloc2">
+            <h3>Mieux qu’une voiture individuelle</h3>
+            <p>La flexibilité d’une gamme complète de voitures sans les tracas de l'assurance, de l'entretien, du
+                stationnement, etc. Plus pratique pour vous, mieux pour votre ville.</p>
+        </section>
+
+    </article>
+
+    <aside id="img-hight-footer">
+        <img src="img/motivid-org-7RY9A5Kz55Q-unsplash.jpg" class="imgmidcar" alt="Feux arrière d'une voiture noir"
+            loading="lazy">
+    </aside>
+</main>
+<script>
+    function imgStyle() {
+        // récuperation des classes des images
+        const largeScreenImg = document.querySelector('.img-desktop');
+        const smallScreenImg = document.querySelector('.img-mobile');
+
+        // si la taille de l'ecran est superieur ou égale a 1025px ...
+        if (window.innerWidth >= 1025) {
+            largeScreenImg.style.display = 'block';
+            smallScreenImg.style.display = 'none';
+        } else {
+            largeScreenImg.style.display = 'none';
+            smallScreenImg.style.display = 'block';
+        }
+    }
+    // execute la fonction au chargement de la page 
+    window.onload = imgStyle;
+    //et chaque fois que la fenêtre est redimensionnée
+    window.addEventListener('resize', imgStyle);
+</script>
+
+<%- include ('footer') -%>

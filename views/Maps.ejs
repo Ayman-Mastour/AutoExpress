@@ -1,0 +1,133 @@
+<%- include('header') -%>
+<main>
+    <section>
+        <div class="head-Map">
+            <h1>Séléctionner une agences</h1>
+            <button onclick="locateUser()">Ma Position</button>
+        </div>
+        <div id="map-container">
+
+            <div id="map"></div>
+            <div id="car-details">
+                <table id="carsTable">
+                    <tbody>
+                        <!-- Les voitures sont affiicher ici -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Inclusion des bibliothèques Leaflet et Leaflet-Control-Geocoder -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+        <script>
+            var map = L.map('map').setView([48.8493748770692, 2.3482984955181374], 9);
+            var CartoDB_Voyager = L.tileLayer(
+                'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                    subdomains: 'abcd',
+                    maxZoom: 20
+                }).addTo(map);
+
+            // Fonction pour géolocaliser l"users
+            function locateUser() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var userLatLng = [position.coords.latitude, position.coords.longitude];
+                        L.marker(userLatLng).addTo(map).bindPopup('Votre Position').openPopup();
+                        map.setView(userLatLng, 10);
+                    });
+                } else {
+                    alert('La géolocalisation n\'est pas supportée par votre navigateur.');
+                }
+            }
+
+            var ejsTemplate = `
+            var agenciesData = [
+                <% agencies.forEach(function (agency) { %>
+                    {
+                        id: <%= agency.id %>,
+                        latitude: <%= agency.latitude %>,
+                        longitude: <%= agency.longitude %>,
+                        name: '<%= agency.name %>'
+                    },
+            <% }); %>
+            ];`;
+
+            //creation nouvel element script
+            var scriptElement = document.createElement('script');
+            //attribution du contenu au script nouvellement crée en lui donnant le texte contenu dans la variable
+            scriptElement.textContent = ejsTemplate;
+            //insere du script dans le body en html
+            document.body.appendChild(scriptElement);
+
+            // function pour ajouter les marker et les modifiers
+            function addMarkersToMap() {
+                agenciesData.forEach(agency => {
+                    const marker = L.marker([agency.latitude, agency.longitude]).addTo(map);
+
+                    const popupContent = `
+                <h3>${agency.name}</h3>
+                <a href="#" onclick="fetchCarDetails('${agency.id}')">Voir les véhicules</a>
+            `;
+
+                    marker.bindPopup(popupContent);
+                });
+            }
+            //function pour afficher un tableau qui affichera les vehicules et leurs photos dynamiquement
+            function showCarDetails(carData) {
+                const carsTable = document.getElementById('carsTable').getElementsByTagName('tbody')[0];
+                carsTable.innerHTML = '';
+                carData.forEach(car => {
+                    const row = carsTable.insertRow();
+                    // création des cellules et remplissage du tableau avec les détails des voitures
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+                    const cell4 = row.insertCell(3)
+                    cell1.innerHTML = car.Brand + ' ' + car.Model;
+                    cell2.innerHTML = car.DailyRate + '€/J';
+                    // affichage des photos lié a chaque voiture
+                    if (car.PhotoPath) {
+                        const carImage = document.createElement('img');
+                        carImage.src = `img/${car.PhotoPath}`;
+                        carImage.alt = car.Brand + ' ' + car.Model;
+                        carImage.width = 100;
+                        cell3.appendChild(carImage);
+                    } else {
+                        cell3.textContent = 'Image non disponible';
+                    }
+
+                    // button 
+                    const selectButton = document.createElement('button');
+                    selectButton.textContent = 'Ajouter';
+                    selectButton.onclick = () => {
+
+                    window.location.href='/Payment'
+
+                    };
+                    cell4.appendChild(selectButton);
+                });
+
+            }
+
+            //function qui utilise l'api fetch opur recuperer les details des voitures associés a l'id de l'agence
+            function fetchCarDetails(agencyId) {
+                fetch(`http://localhost:7005/car-details/${agencyId}`)
+                    //ectraction au format json
+                    .then(response => response.json())
+                    //en passant en tant qu'argument
+                    .then(carData => {
+                        showCarDetails(carData);
+                    })
+                    //gestion error
+                    .catch(error => {
+                        console.error('Erreur lors de la récupération des détails des voitures :', error);
+                    });
+            }
+            addMarkersToMap() // Appel pour placer les marqueurs sur la carte
+        </script>
+    </section>
+</main>

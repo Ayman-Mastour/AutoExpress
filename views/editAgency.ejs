@@ -1,0 +1,20 @@
+<main>
+    <section>
+        <div class="container-log">
+            <h1>Modifier Vos agences</h1>
+            <!-- formulaire pour modifier une agence -->
+            <form action="/editAgency/<%= agency.id %>" method="post">
+                <label for="name">Nom de l'agence</label>
+                <input type="text" name="name" id="name" value="<%= agency.name %>">
+
+                <label for="latitude">Latitude</label>
+                <input type="text" name="latitude" id="latitude" value="<%= agency.latitude %>">
+
+                <label for="longitude">Longitude</label>
+                <input type="text" name="longitude" id="longitude" value="<%= agency.longitude %>">
+
+                <input type="submit" value="Enregistrer">
+            </form>
+        </div>
+    </section>
+</main>

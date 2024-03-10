@@ -1,0 +1,68 @@
+<%- include('header') -%>
+<main>
+    <h1>Admin</h1>
+    <!-- lien qui redirige vers l'ajout de voiture et agence -->
+    <a class="addC" href="/addCar">Ajouter un Véhicule</a>
+    <a class="addA" href="/addAgency">Ajouter une Agence</a>
+
+    <div class="tableCarContainer">
+        <table>
+            <thead>
+                <tr>
+                    <th>image</th>
+                    <th>Vehicule</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- boucle pour afficher tout vehicule;, marque,photo ect.. -->
+                <% for (let i = 0; i < posts.length; i++) { %>
+                <tr>
+                    <th>
+                        <img src="/img/<%= posts[i].PhotoPath %>" alt="<%=posts[i].alt%>" />
+                    </th>
+
+                    <th>
+                        <!-- affichage du model, marque, années -->
+                        <%= posts[i].Brand %> <%= posts[i].Model %> (<%= posts[i].Year %>)
+                    </th>
+                    <th>
+                        <!-- affichage du prix -->
+                        <%= posts[i].DailyRate %>€ /J
+                    </th>
+                    <th>
+                        <!-- un bouton pour modifier par id et delete par id -->
+                        <a class="edit" href="editCar/<%= posts[i].id %>">Modifier</a>
+                        <a class="delete" href="deleteCar/<%= posts[i].id %>">Supprimer</a>
+                    </th>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <table class="tableContainerAgency">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- boucle pour afficher agence -->
+            <% for (let i = 0; i < agencies.length; i++) { %>
+            <tr>
+                <!-- affichage du nom, latitude et longitude de l'agence -->
+                <td><%= agencies[i].name %></td>
+                <td><%= agencies[i].latitude %></td>
+                <td><%= agencies[i].longitude %></td>
+                <td>
+                    <!-- un bouton pour modifier par id et delete par id -->
+                    <a class="edit" href="/editAgency/<%= agencies[i].id %>">Modifier</a>
+                    <a class="delete" href="/deleteAgency/<%= agencies[i].id %>">Supprimer</a>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</main>

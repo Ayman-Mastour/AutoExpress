@@ -1,0 +1,23 @@
+@import '_variables.scss';
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%lien {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+%bouton {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: $main-color;
+    cursor: pointer;
+}
+

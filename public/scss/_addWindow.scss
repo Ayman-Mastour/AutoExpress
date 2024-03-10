@@ -1,0 +1,11 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+@import '_placeholders.scss';
+
+
+.form-add input{
+    border-radius: 5px;
+    margin: 5px;
+    background-color: white;
+}
+

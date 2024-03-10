@@ -1,0 +1,31 @@
+<%- include('header') -%>
+<main>
+    <section>
+        <div class="container-log">
+
+            <span class="text-log">
+                <h1>Admin</h1>
+            </span>
+            <!-- gestion error -->
+            <% if(locals.message) { %>
+
+            <strong>
+                <%= message %>
+            </strong>
+
+            <% } %>
+            <!-- formulaire pour connexion admin-->
+            <form method="post" action="login" class="form-log">
+                <label for="email">Adresse email</label>
+                <input type="email" name="email" id="email" value="ayman@gmail.com">
+
+                <label for="pwd">Mot de passe</label>
+                <input type="password" name="pwd" id="pwd" value="ayman">
+
+                <button type="submit">Se connecter</button>
+            </form>
+            <div id="login"></div>
+
+        </div>
+    </section>
+</main>
